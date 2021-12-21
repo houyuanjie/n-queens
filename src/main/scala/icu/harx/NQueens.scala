@@ -63,11 +63,6 @@ object NQueens:
                 val queens   = currPosition :: currQueens
                 backtracking(position, queens, solutions)
 
+        // 求值 默认按行有序所以只需从中提取出列
         backtracking(RowCol(0, 0), Nil, Nil)
             .map(solution => solution.map(rowCol => rowCol.col))
-
-
-    @main
-    def test(): Unit =
-        println(apply(4))
-        println(apply(8))
